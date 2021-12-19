@@ -6,7 +6,7 @@
     <% } %>
     <div class="article-container grid">
         <% it.resume.basics.profiles?.forEach(function(profile){ %>
-            <article>
+            <article class="profile-container grid">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
                 <%~ include('profile-item', {
                     label: profile.network,
