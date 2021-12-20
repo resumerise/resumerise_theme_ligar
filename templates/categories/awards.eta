@@ -1,4 +1,4 @@
-<section id="awards" class="awards">
+<section class="awards section" id="awards">
 	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
 		<header class="section__title">
 			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>

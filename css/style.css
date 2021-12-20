@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
 
+@import url('http://fonts.cdnfonts.com/css/hezaedrus');
+@import url('http://fonts.cdnfonts.com/css/ethons-styles');
+
 :root {
     --header-height: 3rem;
     /*========== COLORS ==========*/
@@ -23,8 +26,11 @@
     /*========== FONT & TYPORGRAPHY ==========*/
     --body-font: 'Poppins', sans-serif;
     /* --second-font: 'Imperial Script', cursive; */
-    --second-font: 'Oooh Baby', cursive;
-    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    /* --body-font: 'Hezaedrus', sans-serif; */
+
+    --second-font: 'Hezaedrus', sans-serif;
+    --third-font: 'Ethons Styles', sans-serif;
+
     --biggest-font-size: 4rem;
     --bigger-font-size: 3rem;
     --big-font-size: 2rem;
@@ -160,12 +166,30 @@ section {
     color: var(--article-title);
     font-weight: var(--font-500);
     color: var(--first-color);
+    font-style: italic;
     /* text-transform: uppercase; */
     margin-bottom: var(--mb-1-5);
 }
 
 article {
     position: relative;
+}
+
+.basics .article-container {
+    margin-left: 0;
+}
+
+.right .article-container {
+    margin-top: var(--mb-0-5);
+    margin-left: var(--mb-2-5);
+}
+
+.right .article__date {
+    position: absolute;
+    top: -1.2rem;
+    left: -1.5rem;
+    list-style: square;
+    display: list-item;
 }
 
 .article__title {
@@ -195,7 +219,7 @@ article {
 .grid {
     display: -ms-grid;
     display: grid;
-    gap: var(--mb-3);
+    gap: var(--mb-2);
 }
 
 .s-grid {
@@ -230,7 +254,7 @@ article {
 .container {
     /* max-width: 968px; */
     max-width: 1024px;
-    width: calc(100% - 3rem);
+    /* width: calc(100% - 3rem); */
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
 }
@@ -263,9 +287,9 @@ article {
 }
 
 .home__title {
-    font-size: var(--big-font-size);
+    font-size: var(--biggest-font-size);
     font-weight: var(--font-800);
-    font-family: var(--second-font);
+    font-family: var(--third-font);
     line-height: 1.2;
     margin-top: var(--mb-1);
     color: #131c25;
@@ -278,19 +302,60 @@ article {
     margin-top: var(--mb-0-5);
 }
 
+.home__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .home__description {
     margin-top: var(--mb-1);
 }
 
 /*========== PROFILES ==========*/
 .profiles .article-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
 }
 
 .profiles .icon {
     font-size: 1.5em;
     color: var(--icon-social-color);
+}
+
+/*========== REFERENCCE ==========*/
+.references .references__container {
+    position: relative;
+    margin-top: 2.5rem;
+    margin-left: 2rem;
+}
+
+.references .references__container::before,
+.references .references__container::after {
+    background: var(--text-color);
+}
+
+.references .references__container::before {
+    content: '';
+    background: url(https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png);
+    position: absolute;
+    top: -229px;
+    left: -511px;
+    transform: scale(.08);
+    width: 1000px;
+    height: 429px;
+}
+
+.references .references__container::after {
+    content: '';
+    background: url(https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png);
+    position: absolute;
+    bottom: -240px;
+    right: -506px;
+    transform: scale(.08) scaleX(-1) scaleY(-1);
+    width: 1000px;
+    height: 429px;
 }
 
 /*========== ICONS ==========*/
@@ -344,13 +409,13 @@ article {
 }
 
 @media screen and (min-width: 350px) {
-    .container {
+    /* .container {
         margin-left: var(--mb-1-5);
         margin-right: var(--mb-1-5);
-    }
+    } */
 }
 
-@media screen and (min-width: 768px) {
+@media print, screen and (min-width: 768px) {
 
     .main-wrapper,
     .basics {
@@ -361,6 +426,10 @@ article {
 
     .home__img {
         width: 300px;
+    }
+
+    .home__wrapper {
+        align-items: flex-start;
     }
 
     .home__title,
