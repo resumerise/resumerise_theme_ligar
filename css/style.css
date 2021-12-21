@@ -220,6 +220,10 @@ article {
     margin-top: var(--mb-1);
 }
 
+.article__label {
+    color: var(--first-color);
+}
+
 /*========== LAYOUT ==========*/
 .grid {
     display: -ms-grid;
@@ -416,6 +420,7 @@ article {
 }
 
 @media print, screen and (min-width: 768px) {
+
     .main-wrapper,
     .basics {
         display: grid;
