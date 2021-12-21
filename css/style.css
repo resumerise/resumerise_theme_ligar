@@ -163,8 +163,8 @@ section {
 .section__title {
     position: relative;
     font-size: var(--h1-font-size);
+    font-family: var(--second-font);
     color: var(--article-title);
-    font-weight: var(--font-500);
     color: var(--first-color);
     font-style: italic;
     /* text-transform: uppercase; */
@@ -190,6 +190,11 @@ article {
     left: -1.5rem;
     list-style: square;
     display: list-item;
+    color: var(--text-color);
+}
+
+.right .article__date::marker {
+    color: var(--title-color);
 }
 
 .article__title {
@@ -219,7 +224,7 @@ article {
 .grid {
     display: -ms-grid;
     display: grid;
-    gap: var(--mb-2);
+    gap: var(--mb-3);
 }
 
 .s-grid {
@@ -315,7 +320,7 @@ article {
 
 /*========== PROFILES ==========*/
 .profiles .article-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 
 }
 
@@ -326,30 +331,23 @@ article {
 
 /*========== REFERENCCE ==========*/
 .references .references__container {
-    position: relative;
-    margin-top: 2.5rem;
     margin-left: 2rem;
 }
 
 .references .references__description {
-    margin-top: 2rem;
+    position: relative;
 }
 
 .references .references__description::before,
 .references .references__description::after {
-    background: var(--text-color);
-    filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 0, 0));
-}
-
-.references .article-content .references__description:first-child::before {
-    top: -168px;
+    filter: opacity(0.5) drop-shadow(0 0 0 rgba(0, 0, 0, .1));
 }
 
 .references .references__description::before {
     content: '';
     background: url(https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png);
     position: absolute;
-    top: -140px;
+    top: -218px;
     left: -511px;
     transform: scale(.05);
     width: 1000px;
@@ -360,7 +358,7 @@ article {
     content: '';
     background: url(https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png);
     position: absolute;
-    bottom: -230px;
+    bottom: -220px;
     right: -477px;
     transform: scale(.05) scaleX(-1) scaleY(-1);
     width: 1000px;
@@ -417,14 +415,7 @@ article {
     display: none;
 }
 
-@media screen and (min-width: 390px) {
-    .references .references__description::before {
-        top: -163px;
-    }
-}
-
 @media print, screen and (min-width: 768px) {
-
     .main-wrapper,
     .basics {
         display: grid;
@@ -449,13 +440,5 @@ article {
     .container {
         margin-left: auto;
         margin-right: auto;
-    }
-
-    /* .references .article-content .references__description:first-child::before {
-        top: -168px;
-    } */
-
-    .references .references__description::before {
-        top: -140px;
     }
 }
