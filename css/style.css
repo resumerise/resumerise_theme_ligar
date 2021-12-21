@@ -331,29 +331,38 @@ article {
     margin-left: 2rem;
 }
 
-.references .references__container::before,
-.references .references__container::after {
-    background: var(--text-color);
+.references .references__description {
+    margin-top: 2rem;
 }
 
-.references .references__container::before {
+.references .references__description::before,
+.references .references__description::after {
+    background: var(--text-color);
+    filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 0, 0));
+}
+
+.references .article-content .references__description:first-child::before {
+    top: -168px;
+}
+
+.references .references__description::before {
     content: '';
     background: url(https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png);
     position: absolute;
-    top: -229px;
+    top: -140px;
     left: -511px;
-    transform: scale(.08);
+    transform: scale(.05);
     width: 1000px;
     height: 429px;
 }
 
-.references .references__container::after {
+.references .references__description::after {
     content: '';
     background: url(https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png);
     position: absolute;
-    bottom: -240px;
-    right: -506px;
-    transform: scale(.08) scaleX(-1) scaleY(-1);
+    bottom: -230px;
+    right: -477px;
+    transform: scale(.05) scaleX(-1) scaleY(-1);
     width: 1000px;
     height: 429px;
 }
@@ -408,11 +417,10 @@ article {
     display: none;
 }
 
-@media screen and (min-width: 350px) {
-    /* .container {
-        margin-left: var(--mb-1-5);
-        margin-right: var(--mb-1-5);
-    } */
+@media screen and (min-width: 390px) {
+    .references .references__description::before {
+        top: -163px;
+    }
 }
 
 @media print, screen and (min-width: 768px) {
@@ -441,5 +449,13 @@ article {
     .container {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* .references .article-content .references__description:first-child::before {
+        top: -168px;
+    } */
+
+    .references .references__description::before {
+        top: -140px;
     }
 }

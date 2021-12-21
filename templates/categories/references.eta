@@ -19,7 +19,7 @@
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
 						value: reference.reference,
-						classes: 'article__description'
+						classes: 'article__description references__description'
 					}) %>
 				</div>
 			</article>
