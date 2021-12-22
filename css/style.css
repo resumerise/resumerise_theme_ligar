@@ -2,18 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
 
-@import url('http://fonts.cdnfonts.com/css/hezaedrus');
+/* @import url('http://fonts.cdnfonts.com/css/hezaedrus'); */
+@import url('http://fonts.cdnfonts.com/css/lcr-autumn-harvest-dings');
 @import url('http://fonts.cdnfonts.com/css/ethons-styles');
 
 :root {
     --header-height: 3rem;
     /*========== COLORS ==========*/
     --first-color: #0ca9de;
-    /* --first-color: hsl(220, 100%, 65%);
-    --first-color-second: hsl(220, 69%, 61%);
-    --first-color-alt: hsl(220, 57%, 53%);
-    --first-color-lighter: hsl(220, 69%, 61%);
-    --first-color-lighter-dark: #292523; */
     --article-title: #363978;
     --home-title-color: #45423C;
     --title-color: #292523;
@@ -29,6 +25,7 @@
     /* --body-font: 'Hezaedrus', sans-serif; */
 
     --second-font: 'Hezaedrus', sans-serif;
+    /* --second-font: 'LCR Autumn Harvest Dings', sans-serif; */
     --third-font: 'Ethons Styles', sans-serif;
 
     --biggest-font-size: 4rem;
@@ -95,29 +92,13 @@ body {
     overflow-x: hidden;
 }
 
-/* @media print {
-    body {
-        width: 21cm;
-        height: 29.7cm;
-        margin: 27mm 16mm 27mm 16mm;
-    }
-}
-
-@media screen {
-    body {
-        line-height: var(--layout-default-line-height);
-        margin: 3em 0;
-        margin-bottom: 5em;
-    }
-} */
-
 ::-moz-selection {
-    background: #5e5e5e;
+    background: var(--first-color);
     color: white;
 }
 
 ::selection {
-    background: #5e5e5e;
+    background: var(--first-color);
     color: white;
 }
 
@@ -191,6 +172,7 @@ article {
     list-style: square;
     display: list-item;
     color: var(--text-color);
+    font-size: var(--small-font-size);
 }
 
 .right .article__date::marker {
@@ -251,8 +233,14 @@ article {
 }
 
 .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-column-gap: var(--mb-0-75);
+    -moz-column-gap: var(--mb-0-75);
     column-gap: var(--mb-0-75);
 }
 
@@ -312,9 +300,18 @@ article {
 }
 
 .home__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -324,6 +321,7 @@ article {
 
 /*========== PROFILES ==========*/
 .profiles .article-container {
+    -ms-grid-columns: repeat(5, 1fr);
     grid-template-columns: repeat(5, 1fr);
 
 }
@@ -344,7 +342,8 @@ article {
 
 .references .references__description::before,
 .references .references__description::after {
-    filter: opacity(0.5) drop-shadow(0 0 0 rgba(0, 0, 0, .1));
+    -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgba(0, 0, 0, .01));
+    filter: opacity(0.5) drop-shadow(0 0 0 rgba(0, 0, 0, .01));
 }
 
 .references .references__description::before {
@@ -353,6 +352,8 @@ article {
     position: absolute;
     top: -218px;
     left: -511px;
+    -webkit-transform: scale(.05);
+    -ms-transform: scale(.05);
     transform: scale(.05);
     width: 1000px;
     height: 429px;
@@ -364,13 +365,14 @@ article {
     position: absolute;
     bottom: -220px;
     right: -477px;
+    -webkit-transform: scale(.05) scaleX(-1) scaleY(-1);
+    -ms-transform: scale(.05) scaleX(-1) scaleY(-1);
     transform: scale(.05) scaleX(-1) scaleY(-1);
     width: 1000px;
     height: 429px;
 }
 
 /*========== ICONS ==========*/
-
 .icon {
     font-style: normal;
     margin-right: 0;
@@ -419,12 +421,16 @@ article {
     display: none;
 }
 
+/*========== MEDIA QUERIES ==========*/
 @media print, screen and (min-width: 768px) {
-
     .main-wrapper,
     .basics {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: .7fr 5rem 1fr;
         grid-template-columns: .7fr 1fr;
+        -webkit-column-gap: 5rem;
+        -moz-column-gap: 5rem;
         column-gap: 5rem;
     }
 
@@ -433,6 +439,8 @@ article {
     }
 
     .home__wrapper {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
     }
 
