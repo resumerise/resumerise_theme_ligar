@@ -340,7 +340,26 @@ article {
     position: relative;
 }
 
+.references .references__description::before {
+    content: open-quote;
+}
+
+.references .references__description::after {
+    content: close-quote;
+}
+
 .references .references__description::before,
+.references .references__description::after {
+    display: inline;
+    font-size: 3rem;
+    color: var(--text-color-light);
+    padding: 0;
+    position: relative;
+    top: .25em;
+}
+
+
+/* .references .references__description::before,
 .references .references__description::after {
     -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgba(0, 0, 0, .01));
     filter: opacity(0.5) drop-shadow(0 0 0 rgba(0, 0, 0, .01));
@@ -370,7 +389,7 @@ article {
     transform: scale(.05) scaleX(-1) scaleY(-1);
     width: 1000px;
     height: 429px;
-}
+} */
 
 /*========== ICONS ==========*/
 .icon {
@@ -423,6 +442,7 @@ article {
 
 /*========== MEDIA QUERIES ==========*/
 @media print, screen and (min-width: 768px) {
+
     .main-wrapper,
     .basics {
         display: -ms-grid;
