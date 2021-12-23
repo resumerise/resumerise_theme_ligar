@@ -391,6 +391,11 @@ article {
     height: 429px;
 } */
 
+.right .section {
+    border-top: 1px dashed #f0f0f0;
+    border-left: 1px dashed #f0f0f0;
+}
+
 /*========== ICONS ==========*/
 .icon {
     font-style: normal;
