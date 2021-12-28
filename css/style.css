@@ -165,10 +165,14 @@ article {
     margin-left: var(--mb-2-5);
 }
 
+.right .section__title {
+    margin-left: .8rem;
+}
+
 .right .article__date {
     position: absolute;
     top: -1.2rem;
-    left: -1.5rem;
+    left: -1.61rem;
     list-style: square;
     display: list-item;
     color: var(--text-color);
@@ -392,8 +396,10 @@ article {
 } */
 
 .right .section {
-    border-top: 1px dashed #f0f0f0;
-    border-left: 1px dashed #f0f0f0;
+    border-top: 1px dashed #e6e6e6;
+    border-left: 1px dashed #e6e6e6;
+    /* border-top: 1px dashed red;
+    border-left: 1px dashed red; */
 }
 
 /*========== ICONS ==========*/
