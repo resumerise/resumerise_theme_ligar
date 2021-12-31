@@ -341,25 +341,29 @@ article {
 }
 
 .references .references__description {
+    margin-top: var(--mb-0-5);
     position: relative;
 }
 
 .references .references__description::before {
     content: open-quote;
+    top: -2rem;
+    left: -1rem;
 }
 
 .references .references__description::after {
     content: close-quote;
+    bottom: -4rem;
+    right: 0;
 }
 
 .references .references__description::before,
 .references .references__description::after {
+    position: absolute;
     display: inline;
-    font-size: 3rem;
+    font-size: 4.5rem;
     color: var(--text-color-light);
     padding: 0;
-    position: relative;
-    top: .25em;
 }
 
 
