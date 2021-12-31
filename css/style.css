@@ -345,6 +345,7 @@ article {
     position: relative;
 }
 
+/* 
 .references .references__description::before {
     content: open-quote;
     top: -2rem;
@@ -362,14 +363,14 @@ article {
     position: absolute;
     display: inline;
     font-size: 4.5rem;
-    /* font-family: sans-serif; */
-    /* font-style: italic; */
+    font-family: sans-serif;
+    font-style: italic;
     color: var(--text-color-light);
     padding: 0;
-}
+} */
 
 
-/* .references .references__description::before,
+.references .references__description::before,
 .references .references__description::after {
     -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgba(0, 0, 0, .01));
     filter: opacity(0.5) drop-shadow(0 0 0 rgba(0, 0, 0, .01));
@@ -379,8 +380,10 @@ article {
     content: '';
     background: url(https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png);
     position: absolute;
-    top: -218px;
-    left: -511px;
+    /* top: -218px;
+    left: -511px; */
+    top: -13.5rem;
+    left: -31.8rem;
     -webkit-transform: scale(.05);
     -ms-transform: scale(.05);
     transform: scale(.05);
@@ -392,14 +395,15 @@ article {
     content: '';
     background: url(https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png);
     position: absolute;
-    bottom: -220px;
+    /* bottom: -220px; */
+    bottom: -13rem;
     right: -477px;
     -webkit-transform: scale(.05) scaleX(-1) scaleY(-1);
     -ms-transform: scale(.05) scaleX(-1) scaleY(-1);
     transform: scale(.05) scaleX(-1) scaleY(-1);
     width: 1000px;
     height: 429px;
-} */
+}
 
 .right .section {
     border-top: 1px dashed #e6e6e6;
