@@ -1,4 +1,4 @@
-<section id="profiles" class="profiles">
+<section class="profiles section" id="profiles">
     <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
         <header class="section__title">
             <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
@@ -6,7 +6,7 @@
     <% } %>
     <div class="article-container grid">
         <% it.resume.basics.profiles?.forEach(function(profile){ %>
-            <article>
+            <article class="profile-container grid">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
                 <%~ include('profile-item', {
                     label: profile.network,
