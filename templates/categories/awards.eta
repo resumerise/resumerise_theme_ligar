@@ -1,9 +1,8 @@
 <section class="awards section" id="awards">
 	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
-		<header class="section__title">
-			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
-		</header>
+		<header><%= it.resume.settings.labels.categoryProperty.award.categoryTitle %></header>
 	<% } %>
+
 	<div class="article-container grid">
 		<% it.resume?.awards.forEach(function(award) { %>
 			<article>
@@ -22,9 +21,10 @@
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
 						value: award.date,
-						classes: 'article__date'
+						classes: 'article__date no-flex'
 					}) %>
 				</div>
+
 				<div class="article-content s-grid">
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
@@ -34,6 +34,7 @@
 				</div>
 			</article>
 		<% }) %>
+
 		<%~ include('add', {categoryKey: it.resume.settings?.categoryKeys?.award}) %>
 	</div>
 </section>

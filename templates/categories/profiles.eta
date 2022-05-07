@@ -1,9 +1,8 @@
 <section class="profiles section" id="profiles">
-    <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
-        <header class="section__title">
-            <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
-        </header>
+     <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
+        <header class="section--hide-toc"><%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %></header>
     <% } %>
+
     <div class="article-container grid">
         <% it.resume.basics.profiles?.forEach(function(profile){ %>
             <article class="profile-container grid">
@@ -15,6 +14,7 @@
                 }) %>
             </article>
         <% }) %>
+        
         <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.profile}) %>
     </div>
 </section>

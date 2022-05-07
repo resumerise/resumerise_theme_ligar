@@ -1,17 +1,26 @@
 <section class="work section" id="work">
     <% if (it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle) { %>
-        <header class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></header>
+        <header><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></header>
     <% } %>
+
     <div class="article-container grid">
         <% it.resume?.work.forEach(function(work) { %>
             <article>
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id}) %>
                 <div class="article-header">
-                    <%~ include('key-value-item', {
-                        label: it.resume.settings?.labels?.categoryProperty?.work?.company, 
-                        value: work.company,
-                        classes: 'article__title'
-                    }) %>
+                    <div class="article-header-wrapper">
+                        <%~ include('key-value-item', {
+                            label: it.resume.settings?.labels?.categoryProperty?.work?.company, 
+                            value: work.company,
+                            classes: 'article__title'
+                        }) %>
+                        <% if (work.logo) { %>
+                            <div class="article__img">
+                                <img src="<%~ work.logo %>">
+                            </div>
+                        <% } %>
+                    </div>
+                    
                     <%~ include('key-value-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.work?.position, 
                         value: work.position,
@@ -22,14 +31,21 @@
                         value: work.website,
                         classes: 'article__url'
                     }) %>
-                    <%~ include('date-range', {
-                        startDate: work.startDate,
-                        endDate: work.endDate,
-                        present: work.present,
-                        settings: it.resume.settings,
-                        classes: 'article__date'
-                    }) %>
+
+                    <div class="article__date">
+                        <%~ include('date-range', {
+                            startDate: work.startDate,
+                            endDate: work.endDate,
+                            present: work.present,
+                        }) %>
+                        <%~ include('key-value-item', {
+                            label: it.resume.settings?.labels?.durationLabel, 
+                            value: work.durationLabel,
+                            classes: 'article__text duration'
+                        }) %>
+                    </div>
                 </div>
+
                 <div class="article-content s-grid">
                     <%~ include('key-value-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.work?.summary, 
@@ -45,6 +61,7 @@
                 </div>
             </article>
         <% }) %>
+
         <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
     </div>
 </section>

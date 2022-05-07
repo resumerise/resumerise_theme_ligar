@@ -2,9 +2,11 @@
     <%~ include('profile-picture', {
         picture: it.resume.basics.picture
     }) %>
+
     <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
-        <header class="section__title"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></header>
+        <header class="section--hide-toc"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></header>
     <% } %>
+
     <div class="article-container s-grid">
         <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.basics}) %>
         <%~ include('key-value-item', {
@@ -17,6 +19,7 @@
             value: it.resume.basics.label,
             classes: 'home__subtitle'
         }) %>
+        
         <div class="home__wrapper">
             <%~ include('key-url-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 

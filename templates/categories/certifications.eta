@@ -1,7 +1,8 @@
 <section class="certifications section" id="certifications">
-	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
-		<header class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
+		<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
+		<header><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
 	<% } %>
+
 	<div class="article-container grid">
 		<% it.resume?.certifications.forEach(function(certificate) { %>
 			<article>
@@ -20,11 +21,12 @@
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
 						value: certificate.issueDate,
-						classes: 'article__date'
+						classes: 'article__date no-flex'
 					}) %>
 				</div>
 			</article>
 		<% }) %>
 	</div>
+	
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.certificate}) %>
 </section>
