@@ -20,16 +20,18 @@
 					}) %>
 
 					<div class="article__date">
-						<%~ include('date-range', {
-							startDate: volunteer.startDate,
-							endDate: volunteer.endDate,
-							present: volunteer.present,
-						}) %>
-						<%~ include('key-value-item', {
-							label: it.resume.settings?.labels?.durationLabel, 
-							value: volunteer.durationLabel,
-							classes: 'article__text duration'
-						}) %>
+                        <div class="article__date-wrapper">
+							<%~ include('date-range', {
+								startDate: volunteer.startDate,
+								endDate: volunteer.endDate,
+								present: volunteer.present,
+							}) %>
+							<%~ include('key-value-item', {
+								label: it.resume.settings?.labels?.durationLabel, 
+								value: volunteer.durationLabel,
+								classes: 'article__text duration'
+							}) %>
+						</div>
 					</div>
 					
 					<%~ include('key-url-item', {
