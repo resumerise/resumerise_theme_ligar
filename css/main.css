@@ -427,17 +427,21 @@ article {
     margin-top: var(--mb-1);
 }
 
-/*========== PROFILES ==========*/
+/*======================================== PROFILES ========================================*/
 .profiles .article-container {
-    -ms-grid-columns: repeat(5, 1fr);
-    grid-template-columns: repeat(5, 1fr);
-
-}
-
-.profiles .icon {
+    flex-direction: row;
+    display: flex;
+    gap: var(--profiles-icon-gap);
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    align-content: center;
+  }
+  
+  .profiles .icon {
     font-size: 1.5em;
-    color: var(--icon-social-color);
-}
+    color: var(--first-color-lighter);
+  }
 
 /*========== REFERENCCE ==========*/
 .references .references__container {
