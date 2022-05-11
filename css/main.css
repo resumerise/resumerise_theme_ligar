@@ -1,10 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
-
-/* @import url('http://fonts.cdnfonts.com/css/hezaedrus'); */
-@import url('http://fonts.cdnfonts.com/css/lcr-autumn-harvest-dings');
-@import url('http://fonts.cdnfonts.com/css/ethons-styles');
 
 :root {
     --header-height: 3rem;
@@ -22,11 +16,6 @@
     --black-color: black;
     /*========== FONT & TYPORGRAPHY ==========*/
     --body-font: 'Poppins', sans-serif;
-    /* --second-font: 'Imperial Script', cursive; */
-    /* --body-font: 'Hezaedrus', sans-serif; */
-
-    --second-font: 'Hezaedrus', sans-serif;
-    /* --second-font: 'LCR Autumn Harvest Dings', sans-serif; */
     --third-font: 'Ethons Styles', sans-serif;
 
     --biggest-font-size: 4rem;
@@ -70,6 +59,9 @@
     --skill-rating-border-radius: 5em;
     /*  Secondary color  */
     --first-color-second: hsl(var(--hue-color), 69%, 61%);
+
+    /* Social icons gap */
+    --profiles-icon-gap: 2em;
 }
 
 /*========== FONT SIZE FOR LARGER SCREENS ==========*/
@@ -356,7 +348,6 @@ article {
 }
 
 .container {
-    /* max-width: 968px; */
     max-width: 1024px;
     /* width: calc(100% - 3rem); */
     margin-left: var(--mb-1);
@@ -365,10 +356,6 @@ article {
 
 .main {
     padding: var(--mb-1);
-}
-
-.wrapper {
-    margin: var(--mb-1-5) 0;
 }
 
 .hide {
@@ -391,9 +378,8 @@ article {
 }
 
 .home__title {
-    font-size: var(--biggest-font-size);
-    font-weight: var(--font-800);
-    font-family: var(--third-font);
+    font-size: var(--big-font-size);
+    font-weight: var(--font-700);
     line-height: 1.2;
     margin-top: var(--mb-1);
     color: #131c25;
@@ -435,12 +421,15 @@ article {
     justify-content: flex-start;
     align-items: baseline;
     align-content: center;
-  }
-  
-  .profiles .icon {
+}
+
+.profiles .icon {
     font-size: 1.5em;
-    color: var(--first-color-lighter);
-  }
+    color: var(--first-color);
+    font-style: normal;
+    margin-right: 0;
+    width: 0.6em;
+}
 
 /*========== REFERENCCE ==========*/
 .references .references__container {
@@ -514,13 +503,6 @@ article {
 
 
 /*========== ICONS ==========*/
-.icon {
-    font-style: normal;
-    margin-right: 0;
-    width: 0.6em;
-    color: var(--icon-color);
-}
-
 .icon.twitter:before {
     content: "\f099";
 }
@@ -584,7 +566,7 @@ article {
 }
 
 /*========== MEDIA QUERIES ==========*/
-@media screen and (min-width: 568px) {
+@media print, screen and (min-width: 568px) {
     .right .article-container {
         margin-left: var(--mb-2-5);
     }
@@ -619,7 +601,8 @@ article {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media print, screen and (min-width: 768px) {
+
     .main-wrapper,
     .basics {
         display: -ms-grid;
@@ -654,15 +637,20 @@ article {
 }
 
 @media print {
-    .main {
-        background-image: none;
+    section {
+        padding: 3rem 0 4rem;
     }
-    
-    .basics,
-    .main-wrapper {
-        grid-template-columns: none;
-        max-width: none;
-        margin: 0;
+
+    .main {
+        background: none;
+    }
+
+    .main-wrapper,
+    .basics {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -webkit-column-gap: 0;
+        -moz-column-gap: 0;
         column-gap: 0;
     }
 
@@ -670,6 +658,16 @@ article {
     .basics {
         display: none;
         user-select: none;
+    }
+
+    .skills .article-container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-start;
+    }
+
+    .languages .article-container,
+    .interests .article-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .pagedjs_margin {
@@ -860,7 +858,6 @@ article {
         justify-content: center;
         align-content: center;
         gap: 2cm;
-        font-family: var(--second-font);
     }
 
     .cover-page__main-skills {
@@ -869,7 +866,7 @@ article {
     }
 
     .cover-page h1 {
-        font-size: var(--biggest-font-size);
+        font-size: var(--bigger-font-size);
         font-family: var(--body-font);
     }
 
@@ -879,7 +876,7 @@ article {
     }
 
     .cover-page .cover-page__contact {
-        font-size: var(--normal-font-size);
+        font-size: var(--small-font-size);
     }
 
     .cover-page h1,
@@ -893,8 +890,8 @@ article {
         color: black !important;
     }
 
-    .cover-page .picture {
-        text-align: center;
+    .cover-page .home__img {
+        margin-top: -11rem;
     }
 
     .cover-page__header {
@@ -905,19 +902,16 @@ article {
         margin-top: 6rem;
     }
 
-    .cover-page__header .picture img {
-        width: 10cm;
-        height: auto;
-        border-radius: 50%;
-    }
-
     .cover-page__contact {
-        font-size: 10pt;
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 0.7cm;
         margin-top: 1rem;
+    }
+
+    .cover-page__contact * {
+        color: var(--black-color) !important;
     }
 
     .cover-page__social {
@@ -928,6 +922,8 @@ article {
 
     .cover-page__social .icon {
         font-size: 16pt;
+        font-style: normal;
+
     }
 
     .cover-page__header .summary {
