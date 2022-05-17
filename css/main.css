@@ -163,10 +163,6 @@ header {
     margin-top: var(--mb-0-5);
 }
 
-.right header {
-    margin-left: var(--mb-1);
-}
-
 article {
     position: relative;
 }
@@ -175,13 +171,6 @@ article {
     margin-left: 0;
 }
 
-.right .article-container {
-    margin-top: var(--mb-0-5);
-}
-
-.right .section__title {
-    margin-left: .8rem;
-}
 
 .article__title {
     position: relative;
@@ -303,6 +292,20 @@ article {
     -moz-border-radius: var(--skill-rating-border-radius);
     -ms-border-radius: var(--skill-rating-border-radius);
     -o-border-radius: var(--skill-rating-border-radius);
+}
+
+@media only screen {
+    .right header {
+        margin-left: var(--mb-1);
+    }
+
+    .right .article-container {
+        margin-top: var(--mb-0-5);
+    }
+
+    .right .section__title {
+        margin-left: .8rem;
+    }
 }
 
 /*========== LAYOUT ==========*/
@@ -566,7 +569,7 @@ article {
 }
 
 /*========== MEDIA QUERIES ==========*/
-@media print, screen and (min-width: 568px) {
+@media screen and (min-width: 568px) {
     .right .article-container {
         margin-left: var(--mb-2-5);
     }
@@ -589,7 +592,9 @@ article {
     .right .article__date::marker {
         color: var(--title-color);
     }
+}
 
+@media print, screen and (min-width: 568px) {
     .article__date .article__date-wrapper {
         display: flex;
         flex-direction: row;
